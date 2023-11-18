@@ -1,8 +1,14 @@
 from bs4 import BeautifulSoup
 import requests
+import time
 
 def parse_pages(urls, output_file='output.html'):
     with open(output_file, 'w', encoding='utf-8') as file:
+        
+         # Запись времени срабатывания скрипта
+        current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        file.write(f"Скрипт сработал в: {current_time}\n\n")
+        
         for url in urls:
             # Отправка запроса на сервер и получение HTML-кода страницы
             response = requests.get(url)
@@ -27,3 +33,5 @@ urls_to_parse = [
 ]
 
 parse_pages(urls_to_parse)
+
+## Добавь между таблицами перенос строки
