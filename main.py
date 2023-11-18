@@ -47,5 +47,3 @@ search_keywords = ['Индекс инфляции в Украине',
                    ]
 
 parse_pages(urls_to_parse, search_keywords)
-
-## Добавь пробел с после 
