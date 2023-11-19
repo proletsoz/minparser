@@ -1,16 +1,6 @@
-# Скрипт сработал: 2023-11-19 17:44:35
+### 2023-11-19 18:04:32
 
-<style>
-table.grid {
-  width: 100%;
-  border-collapse: collapse;
-}
-table.grid th, table.grid td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="styles.css">
 
 ## Тарифы на электроэнергию для населения(с 1.06.2023 по настоящее время)
 

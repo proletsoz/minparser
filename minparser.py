@@ -7,20 +7,11 @@ def parse_pages(urls, output_file='readme.md'):
     with open(output_file, 'w', encoding='utf-8') as file:
         # Запись времени срабатывания скрипта
         current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        file.write(f"# Скрипт сработал: {current_time}\n\n")
+        file.write(f"### {current_time}\n\n")
 
-        # Вставка стилей внутрь HTML-тега <style>
-        file.write("<style>\n")
-        file.write("table.grid {\n")
-        file.write("  width: 100%;\n")
-        file.write("  border-collapse: collapse;\n")
-        file.write("}\n")
-        file.write("table.grid th, table.grid td {\n")
-        file.write("  border: 1px solid #ddd;\n")
-        file.write("  padding: 8px;\n")
-        file.write("  text-align: left;\n")
-        file.write("}\n")
-        file.write("</style>\n\n")
+        # Подключение внешнего файла со стилями
+        file.write(
+            '<link rel="stylesheet" type="text/css" href="styles.css">\n\n')
 
         for url in urls:
             # Отправка запроса на сервер и получение HTML-кода страницы

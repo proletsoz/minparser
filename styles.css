@@ -1,0 +1,13 @@
+/* styles.css */
+
+table.grid {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.grid th,
+table.grid td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: left;
+}
