@@ -7,7 +7,7 @@ def parse_pages(urls, output_file='readme.md'):
     with open(output_file, 'w', encoding='utf-8') as file:
         # Запись времени срабатывания скрипта
         current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        file.write(f"# {current_time}\n\n")
+        file.write(f"# Скрипт сработал: {current_time}\n\n")
 
         for url in urls:
             # Отправка запроса на сервер и получение HTML-кода страницы
@@ -22,9 +22,6 @@ def parse_pages(urls, output_file='readme.md'):
 
             # Запись таблиц в файл
             for table in tables:
-                # Установка cellpadding="0"
-                table.attrs['cellpadding'] = '0'
-
                 # Извлечение заголовка таблицы и удаление тега <caption>
                 table_caption = table.find('caption')
                 if table_caption:
@@ -36,7 +33,10 @@ def parse_pages(urls, output_file='readme.md'):
                 # Запись текста заголовка с добавлением "##"
                 file.write(f"## {caption_text}\n\n")
 
-                # Запись таблицы без тега <caption> с установленным cellpadding
+                # Очистка свойств таблицы
+                table.attrs.clear()
+
+                # Запись таблицы без тега <caption> и без свойств
                 file.write(str(table.prettify()))
                 file.write('\n\n')
 
