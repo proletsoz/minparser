@@ -1,4 +1,6 @@
-# Скрипт сработал: 2023-11-19 11:25:15<table border="0" cellpadding="3" cellspacing="0" class="grid">
+# Скрипт сработал: 2023-11-19 11:26:13
+
+<table border="0" cellpadding="3" cellspacing="0" class="grid">
  <caption>
   Тарифы на электроэнергию для населения
   <br/>

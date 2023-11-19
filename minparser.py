@@ -8,7 +8,7 @@ def parse_pages(urls, output_file='readme.md'):
 
         # Запись времени срабатывания скрипта
         current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        file.write(f"# Скрипт сработал: {current_time}")
+        file.write(f"# Скрипт сработал: {current_time}\n\n")
 
         for url in urls:
             # Отправка запроса на сервер и получение HTML-кода страницы
