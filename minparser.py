@@ -3,8 +3,11 @@ import requests
 import time
 
 
-def parse_pages(urls, output_file='output.html'):
+def parse_pages(urls, output_file='minparser.html'):
     with open(output_file, 'w', encoding='utf-8') as file:
+        # Запись ссылки на стилевой файл
+        file.write(
+            '<link rel="stylesheet" type="text/css" href="styles.css">\n\n')
 
         # Запись времени срабатывания скрипта
         current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -24,7 +27,6 @@ def parse_pages(urls, output_file='output.html'):
             # Запись таблиц в файл
             for table in tables:
                 file.write(str(table.prettify()))
-                file.write('\n\n')
 
 
 # Пример использования с несколькими страницами
@@ -35,5 +37,3 @@ urls_to_parse = [
 ]
 
 parse_pages(urls_to_parse)
-
-# Добавь между таблицами перенос строки
