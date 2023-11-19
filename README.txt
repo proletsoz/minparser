@@ -1,6 +1,6 @@
-<link rel="stylesheet" type="text/css" href="styles.css">
+# Тарифы и индексы
 
-Скрипт сработал в: 2023-11-19 10:22:06
+## https://index.minfin.com.ua/tariff/electric/
 
 <table border="0" cellpadding="3" cellspacing="0" class="grid">
  <caption>
@@ -34,6 +34,12 @@
   </td>
  </tr>
 </table>
+
+
+Скрипт сработал в: 2023-11-19 10:38:53
+
+## https://index.minfin.com.ua/tariff/gas/
+
 <table border="0" cellpadding="3" cellspacing="0" class="grid">
  <caption>
   Розничные цены на природный газ для населения
@@ -357,6 +363,8 @@
   </td>
  </tr>
 </table>
+
+
 <table border="0" cellpadding="3" cellspacing="0" class="grid">
  <caption>
   Стоимость доставки газа операторами ГРС
@@ -872,3 +880,7 @@
   </td>
  </tr>
 </table>
+
+
+Скрипт сработал в: 2023-11-19 10:38:53
+
