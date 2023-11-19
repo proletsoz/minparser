@@ -1,4 +1,4 @@
-# Parsed Data
+# Скрипт сработал: 2023-11-19 11:14:35
 
 <link rel="stylesheet" type="text/css" href="styles.css">
 
@@ -34,11 +34,6 @@
   </td>
  </tr>
 </table>
-
-
-
-Script executed at: 2023-11-19 11:00:02
-
 <table border="0" cellpadding="3" cellspacing="0" class="grid">
  <caption>
   Розничные цены на природный газ для населения
@@ -362,8 +357,6 @@ Script executed at: 2023-11-19 11:00:02
   </td>
  </tr>
 </table>
-
-
 <table border="0" cellpadding="3" cellspacing="0" class="grid">
  <caption>
   Стоимость доставки газа операторами ГРС
@@ -879,8 +872,3 @@ Script executed at: 2023-11-19 11:00:02
   </td>
  </tr>
 </table>
-
-
-
-Script executed at: 2023-11-19 11:00:04
-

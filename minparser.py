@@ -5,14 +5,13 @@ import time
 
 def parse_pages(urls, output_file='readme.md'):
     with open(output_file, 'w', encoding='utf-8') as file:
-        # Запись заголовка и ссылки на стилевой файл
-        file.write("# Parsed Data\n\n")
-        file.write(
-            '<link rel="stylesheet" type="text/css" href="styles.css">\n\n')
 
         # Запись времени срабатывания скрипта
         current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        file.write(f"\nScript executed at: {current_time}\n\n")
+        file.write(f"# Скрипт сработал: {current_time}\n\n")
+
+        file.write(
+            '<link rel="stylesheet" type="text/css" href="styles.css">\n\n')
 
         for url in urls:
             # Отправка запроса на сервер и получение HTML-кода страницы
@@ -28,7 +27,6 @@ def parse_pages(urls, output_file='readme.md'):
             # Запись таблиц в файл
             for table in tables:
                 file.write(str(table.prettify()))
-                file.write('\n\n')
 
 
 # Пример использования с несколькими страницами
