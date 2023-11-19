@@ -35,7 +35,7 @@ def parse_pages(urls, output_file='readme.md'):
                     caption_text = ''
 
                 # Запись текста заголовка с добавлением "##"
-                file.write(f"## {caption_text}\n\n")
+                file.write(f"### {caption_text}\n\n")
 
                 # Запись таблицы без тега <caption> и без свойств
                 file.write(str(table.prettify()))
