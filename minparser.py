@@ -1,10 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
 import time
-from tabulate import tabulate
 
 
-def parse_pages(urls, output_file='README.txt'):
+def parse_pages(urls, output_file='README.md'):
     with open(output_file, 'w', encoding='utf-8') as file:
         # Запись заголовка
         file.write('# Тарифы и индексы\n\n')
@@ -23,12 +22,16 @@ def parse_pages(urls, output_file='README.txt'):
             # Запись заголовка для каждой страницы
             file.write(f'## {url}\n\n')
 
-            # Запись таблиц в файл
+            # Запись таблиц в файл в формате Markdown
             for table in tables:
-                # Преобразование таблицы в Markdown и запись в файл
-                table_html = str(table.prettify())
-                table_md = tabulate([], tablefmt='pipe')
-                file.write(f'{table_md}\n\n')
+                # Извлечение строк и столбцов таблицы
+                rows = table.find_all('tr')
+                for row in rows:
+                    columns = row.find_all(['td', 'th'])
+                    column_texts = [column.get_text(
+                        strip=True) for column in columns]
+                    file.write('|'.join(column_texts) + '\n')
+                file.write('\n')
 
             # Запись времени срабатывания скрипта
             current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
