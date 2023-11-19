@@ -3,10 +3,12 @@ import requests
 import time
 
 
-def parse_pages(urls, output_file='README.md'):
+def parse_pages(urls, output_file='readme.md'):
     with open(output_file, 'w', encoding='utf-8') as file:
-        # Запись заголовка
-        file.write('# Тарифы и индексы\n\n')
+        # Запись заголовка и ссылки на стилевой файл
+        file.write("# Parsed Data\n\n")
+        file.write(
+            '<link rel="stylesheet" type="text/css" href="styles.css">\n\n')
 
         for url in urls:
             # Отправка запроса на сервер и получение HTML-кода страницы
@@ -19,23 +21,14 @@ def parse_pages(urls, output_file='README.md'):
             # Извлечение всех таблиц на странице
             tables = soup.find_all('table', class_='grid')
 
-            # Запись заголовка для каждой страницы
-            file.write(f'## {url}\n\n')
-
-            # Запись таблиц в файл в формате Markdown
+            # Запись таблиц в файл
             for table in tables:
-                # Извлечение строк и столбцов таблицы
-                rows = table.find_all('tr')
-                for row in rows:
-                    columns = row.find_all(['td', 'th'])
-                    column_texts = [column.get_text(
-                        strip=True) for column in columns]
-                    file.write('|'.join(column_texts) + '\n')
-                file.write('\n')
+                file.write(str(table.prettify()))
+                file.write('\n\n')
 
             # Запись времени срабатывания скрипта
             current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-            file.write(f"Скрипт сработал в: {current_time}\n\n")
+            file.write(f"\nScript executed at: {current_time}\n\n")
 
 
 # Пример использования с несколькими страницами
