@@ -10,9 +10,6 @@ def parse_pages(urls, output_file='readme.md'):
         current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         file.write(f"# Скрипт сработал: {current_time}\n\n")
 
-        # file.write(
-        #     '<link rel="stylesheet" type="text/css" href="styles.css">\n\n')
-
         for url in urls:
             # Отправка запроса на сервер и получение HTML-кода страницы
             response = requests.get(url)
