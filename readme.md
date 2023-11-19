@@ -1,8 +1,8 @@
-# Скрипт сработал: 2023-11-19 12:01:33
+# Скрипт сработал: 2023-11-19 12:05:47
 
 ## Тарифы на электроэнергию для населения(с 1.06.2023 по настоящее время)
 
-<table border="0" cellpadding="3" cellspacing="0" class="grid" style="font-size: 0.5em;">
+<table border="0" cellpadding="0" cellspacing="0" class="grid">
  <tr>
   <th align="center" colspan="2">
    Категория потребителей
@@ -31,7 +31,7 @@
 
 ## Розничные цены на природный газ для населенияс 1.11.2023
 
-<table border="0" cellpadding="3" cellspacing="0" class="grid" style="font-size: 0.5em;">
+<table border="0" cellpadding="0" cellspacing="0" class="grid">
  <tr>
   <th align="center" rowspan="2" valign="top">
    Поставщик
@@ -351,7 +351,7 @@
 
 ## Стоимость доставки газа операторами ГРСс 1.11.2023
 
-<table border="0" cellpadding="3" cellspacing="0" class="grid" style="font-size: 0.5em;">
+<table border="0" cellpadding="0" cellspacing="0" class="grid">
  <tr>
   <th align="center" valign="top">
    Поставщик

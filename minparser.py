@@ -22,6 +22,9 @@ def parse_pages(urls, output_file='readme.md'):
 
             # Запись таблиц в файл
             for table in tables:
+                # Установка cellpadding="0"
+                table.attrs['cellpadding'] = '0'
+
                 # Извлечение заголовка таблицы и удаление тега <caption>
                 table_caption = table.find('caption')
                 if table_caption:
@@ -33,11 +36,7 @@ def parse_pages(urls, output_file='readme.md'):
                 # Запись текста заголовка с добавлением "##"
                 file.write(f"## {caption_text}\n\n")
 
-                # Добавление стилей для уменьшения размера шрифта
-                table_style = 'font-size: 0.5em;'  # Попробуйте разные значения
-                table['style'] = table_style
-
-                # Запись таблицы без тега <caption>
+                # Запись таблицы без тега <caption> с установленным cellpadding
                 file.write(str(table.prettify()))
                 file.write('\n\n')
 
