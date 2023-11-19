@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import time
+from tabulate import tabulate
 
 
 def parse_pages(urls, output_file='README.txt'):
@@ -24,8 +25,10 @@ def parse_pages(urls, output_file='README.txt'):
 
             # Запись таблиц в файл
             for table in tables:
-                file.write(str(table.prettify()))
-                file.write('\n\n')
+                # Преобразование таблицы в Markdown и запись в файл
+                table_html = str(table.prettify())
+                table_md = tabulate([], tablefmt='pipe')
+                file.write(f'{table_md}\n\n')
 
             # Запись времени срабатывания скрипта
             current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
