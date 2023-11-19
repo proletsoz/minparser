@@ -34,7 +34,7 @@ def parse_pages(urls, output_file='readme.md'):
                 file.write(f"## {caption_text}\n\n")
 
                 # Добавление стилей для уменьшения размера шрифта
-                table_style = 'font-size: 0.8em;'  # Попробуйте разные значения
+                table_style = 'font-size: 0.5em;'  # Попробуйте разные значения
                 table['style'] = table_style
 
                 # Запись таблицы без тега <caption>
