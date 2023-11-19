@@ -8,7 +8,7 @@ def parse_pages(urls, output_file='readme.md'):
 
         # Запись времени срабатывания скрипта
         current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        file.write(f"# Скрипт сработал: {current_time}\n\n")
+        file.write(f"# {current_time}\n\n")
 
         for url in urls:
             # Отправка запроса на сервер и получение HTML-кода страницы
@@ -23,7 +23,14 @@ def parse_pages(urls, output_file='readme.md'):
 
             # Запись таблиц в файл
             for table in tables:
-                file.write(str(table.prettify()))
+                # Замена тегов <caption> на обычный текст
+                caption_tag = table.find('caption')
+                if caption_tag:
+                    caption_text = caption_tag.get_text(strip=True)
+                    file.write(f"### {caption_text}\n\n")
+
+                file.write(str(table))
+                file.write('\n\n')
 
 
 # Пример использования с несколькими страницами
