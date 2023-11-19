@@ -2,13 +2,14 @@ from bs4 import BeautifulSoup
 import requests
 import time
 
+
 def parse_pages(urls, output_file='output.html'):
     with open(output_file, 'w', encoding='utf-8') as file:
-        
-         # Запись времени срабатывания скрипта
+
+        # Запись времени срабатывания скрипта
         current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         file.write(f"Скрипт сработал в: {current_time}\n\n")
-        
+
         for url in urls:
             # Отправка запроса на сервер и получение HTML-кода страницы
             response = requests.get(url)
@@ -24,7 +25,8 @@ def parse_pages(urls, output_file='output.html'):
             for table in tables:
                 file.write(str(table.prettify()))
                 file.write('\n\n')
-                
+
+
 # Пример использования с несколькими страницами
 urls_to_parse = [
     'https://index.minfin.com.ua/tariff/electric/',
@@ -34,4 +36,4 @@ urls_to_parse = [
 
 parse_pages(urls_to_parse)
 
-## Добавь между таблицами перенос строки
+# Добавь между таблицами перенос строки

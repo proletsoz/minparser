@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 
+
 def parse_pages(urls, keywords, output_file='output.txt'):
     with open(output_file, 'w', encoding='utf-8') as file:
         for url in urls:
@@ -31,6 +32,7 @@ def parse_pages(urls, keywords, output_file='output.txt'):
             # Пробел
             file.write('\n')
 
+
 # Пример использования с несколькими страницами
 urls_to_parse = [
     'https://index.minfin.com.ua/economy/index/inflation/',
@@ -39,8 +41,8 @@ urls_to_parse = [
     'https://index.minfin.com.ua/economy/index/buildprice/',
     # Добавьте дополнительные URL-ы, если необходимо
 ]
-search_keywords = ['Индекс инфляции в Украине', 
-                   'Базовый индекс инфляции', 
+search_keywords = ['Индекс инфляции в Украине',
+                   'Базовый индекс инфляции',
                    'Индекс промпроизводства в Украине',
                    'Индекс цен агропродукции в Украине',
                    'Индекс цен строительства в Украине',
