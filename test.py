@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = 'ваш_сайт'
+url = 'https://referencesfrancisation.immigration-quebec.gouv.qc.ca/moodle_ref/?'
 response = requests.get(url)
 
 if response.status_code == 200:
